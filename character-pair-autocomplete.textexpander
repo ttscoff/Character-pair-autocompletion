@@ -23,15 +23,15 @@
 			<key>label</key>
 			<string></string>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:48:27Z</date>
+			<date>2012-02-19T17:41:31Z</date>
 			<key>plainText</key>
-			<string>{%snippet:;seltxt%}</string>
+			<string>{%snippet:;seltxt%%|}</string>
 			<key>snippetType</key>
 			<integer>0</integer>
 			<key>useCount</key>
 			<integer>0</integer>
 			<key>uuidString</key>
-			<string>1FD25059-B32A-40CB-AD37-A36FEA0709EC</string>
+			<string>1156A018-38F6-4962-809A-5223A1BAD194</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
@@ -45,15 +45,15 @@
 			<key>label</key>
 			<string></string>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:48:21Z</date>
+			<date>2012-02-19T17:32:41Z</date>
 			<key>plainText</key>
-			<string>&lt;%snippet:;seltxt%&gt;</string>
+			<string>&lt;%snippet:;seltxt%%|&gt;</string>
 			<key>snippetType</key>
 			<integer>0</integer>
 			<key>useCount</key>
 			<integer>0</integer>
 			<key>uuidString</key>
-			<string>068AA640-A7A0-47C1-84E1-897639AA7471</string>
+			<string>E670107C-3C8E-46C3-81F7-01B613B82F24</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
@@ -69,15 +69,15 @@
 			<key>lastUsed</key>
 			<date>2012-02-19T04:42:48Z</date>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:29:09Z</date>
+			<date>2012-02-19T17:32:44Z</date>
 			<key>plainText</key>
-			<string>_%snippet:;seltxt%_</string>
+			<string>_%snippet:;seltxt%%|_</string>
 			<key>snippetType</key>
 			<integer>0</integer>
 			<key>useCount</key>
 			<integer>4</integer>
 			<key>uuidString</key>
-			<string>18CBB0E1-D09E-4F84-9678-9E82BA4DE8BE</string>
+			<string>AEED6CAD-7B55-44BD-89CA-154EB4125C8F</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
@@ -91,31 +91,15 @@
 			<key>label</key>
 			<string>Select Text script</string>
 			<key>modificationDate</key>
-			<date>2012-02-19T05:04:55Z</date>
+			<date>2012-02-19T17:39:42Z</date>
 			<key>plainText</key>
-			<string>-- Select Text
--- by ckunte
-
-tell application "MarsEdit"
-	
-	try
-		set currentWindow to document 1
-	on error errorMessage
-		displayErrorMessage("No post windows are open.") of me
-		return
-	end try
-	
-	set s to selected text of currentWindow
-	
-end tell
-
-get s</string>
+			<string>-- Select Text-- by ckunte-- additions by  Brett Terpstra Feb 2012set s to ""tell application "System Events"	set frontApp to (name of first process whose frontmost is true)end tellif frontApp is "MarsEdit" then	tell application "MarsEdit"				try			set currentWindow to document 1		on error errorMessage			displayErrorMessage("No post windows are open.") of me			return		end try				set s to selected text of currentWindow			end tellelse if frontApp is "TextEdit" then		tell application "System Events" to tell text area 1 of scroll area 1 of window 1 of process "TextEdit" to if exists then		set {x, y} to value of attribute "AXSelectedTextRange"		if x &lt; y then			tell application "TextEdit" to set s to document 1's characters x thru y as text		else if x is y then			tell application "TextEdit" to set s to document 1's character x		end if	end if	end ifget s</string>
 			<key>snippetType</key>
 			<integer>2</integer>
 			<key>useCount</key>
 			<integer>0</integer>
 			<key>uuidString</key>
-			<string>840813D7-BFEB-417F-B3B3-E559B3B234EF</string>
+			<string>0C66F74D-2E5A-464D-B6C6-4AC6EA098441</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
@@ -129,17 +113,17 @@ get s</string>
 			<key>label</key>
 			<string></string>
 			<key>lastUsed</key>
-			<date>2012-02-19T04:12:31Z</date>
+			<date>2012-02-19T17:44:47Z</date>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:05:57Z</date>
+			<date>2012-02-19T17:32:50Z</date>
 			<key>plainText</key>
-			<string>"%snippet:;seltxt%"</string>
+			<string>"%snippet:;seltxt%%|"</string>
 			<key>snippetType</key>
 			<integer>0</integer>
 			<key>useCount</key>
 			<integer>5</integer>
 			<key>uuidString</key>
-			<string>A2E5474A-F4B6-458F-A20B-E0FC324589ED</string>
+			<string>CF9C4DF4-7975-4F80-9FFE-3B7FE0EAEC77</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
@@ -155,15 +139,15 @@ get s</string>
 			<key>lastUsed</key>
 			<date>2012-02-19T04:43:45Z</date>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:13:39Z</date>
+			<date>2012-02-19T17:32:54Z</date>
 			<key>plainText</key>
-			<string>`%snippet:;seltxt%`</string>
+			<string>`%snippet:;seltxt%%|`</string>
 			<key>snippetType</key>
 			<integer>0</integer>
 			<key>useCount</key>
 			<integer>3</integer>
 			<key>uuidString</key>
-			<string>B555C0E5-CF14-47AD-A371-D95678C67AF7</string>
+			<string>6621CBA6-62C1-476B-B6C3-89AE109BCDC4</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
@@ -179,15 +163,15 @@ get s</string>
 			<key>lastUsed</key>
 			<date>2012-02-19T05:02:19Z</date>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:13:48Z</date>
+			<date>2012-02-19T17:32:57Z</date>
 			<key>plainText</key>
-			<string>(%snippet:;seltxt%)</string>
+			<string>(%snippet:;seltxt%%|)</string>
 			<key>snippetType</key>
 			<integer>0</integer>
 			<key>useCount</key>
 			<integer>8</integer>
 			<key>uuidString</key>
-			<string>770F24EE-4DE0-41BD-ACB6-17B48A4062A1</string>
+			<string>002E27B8-FB32-4270-83B5-819C2C0A9565</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
@@ -203,15 +187,15 @@ get s</string>
 			<key>lastUsed</key>
 			<date>2012-02-19T04:43:29Z</date>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:18:14Z</date>
+			<date>2012-02-19T17:33:01Z</date>
 			<key>plainText</key>
-			<string>[%snippet:;seltxt%]</string>
+			<string>[%snippet:;seltxt%%|]</string>
 			<key>snippetType</key>
 			<integer>0</integer>
 			<key>useCount</key>
 			<integer>16</integer>
 			<key>uuidString</key>
-			<string>3E3F4D8D-8D8F-4377-85EE-7DBF7DE99556</string>
+			<string>6870F0C4-F4B0-4079-BDEC-3D74A4BBFDE2</string>
 		</dict>
 	</array>
 </dict>
