@@ -13,25 +13,57 @@
 	<array>
 		<dict>
 			<key>abbreviation</key>
+			<string>,,selscript</string>
+			<key>abbreviationMode</key>
+			<integer>0</integer>
+			<key>creationDate</key>
+			<date>2012-02-19T15:35:16Z</date>
+			<key>flags</key>
+			<integer>0</integer>
+			<key>label</key>
+			<string>SelScript</string>
+			<key>modificationDate</key>
+			<date>2012-02-19T16:41:59Z</date>
+			<key>plainText</key>
+			<string>-- Select Text-- by ckunte-- modified by Brett Terpstra Feb. 2012set s to ""set _ok to trueset _out to ""
+tell application "System Events"	set frontApp to (name of first process whose frontmost is true)end tellif frontApp is "MarsEdit" then	tell application "MarsEdit"		try			set currentWindow to document 1		on error errorMessage			displayErrorMessage("No post windows
+         are open.") of me			return		end try		set s to selected text of currentWindow	end tell	else if frontApp is "TextEdit" then	tell application "System Events" to tell text area 1 of scroll area 1 of window 1 of process "TextEdit" to if exists then		set {x, y} to value of attribute "AXSelectedTextRange"		if x &lt; y then			tell application "TextEdit" to set s to document 1's characters x thru y as text		else if x is y then			tell application "TextEdit" to set s to document 1's character x		else			tell application "TextEdit"				set _total to count of document 1's characters				if x &lt; _total then					tell document 1                                           if character x is not " " and character x is not (ASCII Character 10) then							set s to pair_left							set _ok to false
+                                            else
+                                                    set s to ""
+                                                    set _ok to true						end if					end tell				end if			end tell		end if	end ifend ifif _ok is true then	return pair_left &amp; s &amp; pair_rightelse	return send if</string>
+			<key>snippetType</key>
+			<integer>0</integer>
+			<key>useCount</key>
+			<integer>0</integer>
+			<key>uuidString</key>
+			<string>3DCDD214-9A41-40A9-8A0D-D4725518EC41</string>
+		</dict>
+		<dict>
+			<key>abbreviation</key>
 			<string>{</string>
 			<key>abbreviationMode</key>
 			<integer>0</integer>
 			<key>creationDate</key>
 			<date>2012-02-19T04:48:27Z</date>
 			<key>flags</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>label</key>
 			<string></string>
+			<key>lastUsed</key>
+			<date>2012-02-19T16:40:11Z</date>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:48:27Z</date>
+			<date>2012-02-19T16:41:25Z</date>
 			<key>plainText</key>
-			<string>{%snippet:;seltxt%}</string>
+			<string>set pair_left to "{"
+set pair_right to "}"
+
+%snippet:,,selscript%</string>
 			<key>snippetType</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>useCount</key>
 			<integer>0</integer>
 			<key>uuidString</key>
-			<string>1FD25059-B32A-40CB-AD37-A36FEA0709EC</string>
+			<string>FB0B15D3-EC2A-4E2A-A83C-FA07550EDE4C</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
@@ -41,19 +73,24 @@
 			<key>creationDate</key>
 			<date>2012-02-19T04:48:14Z</date>
 			<key>flags</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>label</key>
 			<string></string>
+			<key>lastUsed</key>
+			<date>2012-02-19T16:42:54Z</date>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:48:21Z</date>
+			<date>2012-02-19T16:41:28Z</date>
 			<key>plainText</key>
-			<string>&lt;%snippet:;seltxt%&gt;</string>
+			<string>set pair_left to "&lt;"
+set pair_right to "&gt;"
+
+%snippet:,,selscript%</string>
 			<key>snippetType</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>useCount</key>
 			<integer>0</integer>
 			<key>uuidString</key>
-			<string>068AA640-A7A0-47C1-84E1-897639AA7471</string>
+			<string>04B806B4-409C-4012-AEA5-7DAA74000110</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
@@ -63,59 +100,24 @@
 			<key>creationDate</key>
 			<date>2012-02-19T04:29:02Z</date>
 			<key>flags</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>label</key>
 			<string></string>
 			<key>lastUsed</key>
-			<date>2012-02-19T04:42:48Z</date>
+			<date>2012-02-19T16:47:33Z</date>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:29:09Z</date>
+			<date>2012-02-19T16:41:31Z</date>
 			<key>plainText</key>
-			<string>_%snippet:;seltxt%_</string>
-			<key>snippetType</key>
-			<integer>0</integer>
-			<key>useCount</key>
-			<integer>4</integer>
-			<key>uuidString</key>
-			<string>18CBB0E1-D09E-4F84-9678-9E82BA4DE8BE</string>
-		</dict>
-		<dict>
-			<key>abbreviation</key>
-			<string>;seltxt</string>
-			<key>abbreviationMode</key>
-			<integer>0</integer>
-			<key>creationDate</key>
-			<date>2012-02-19T04:03:54Z</date>
-			<key>flags</key>
-			<integer>1</integer>
-			<key>label</key>
-			<string>Select Text script</string>
-			<key>modificationDate</key>
-			<date>2012-02-19T05:04:55Z</date>
-			<key>plainText</key>
-			<string>-- Select Text
--- by ckunte
+			<string>set pair_left to "_"
+set pair_right to "_"
 
-tell application "MarsEdit"
-	
-	try
-		set currentWindow to document 1
-	on error errorMessage
-		displayErrorMessage("No post windows are open.") of me
-		return
-	end try
-	
-	set s to selected text of currentWindow
-	
-end tell
-
-get s</string>
+%snippet:,,selscript%</string>
 			<key>snippetType</key>
 			<integer>2</integer>
 			<key>useCount</key>
-			<integer>0</integer>
+			<integer>4</integer>
 			<key>uuidString</key>
-			<string>840813D7-BFEB-417F-B3B3-E559B3B234EF</string>
+			<string>BC3DD250-FB16-4F04-BA63-E84B4C9C20B3</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
@@ -125,21 +127,24 @@ get s</string>
 			<key>creationDate</key>
 			<date>2012-02-19T02:58:26Z</date>
 			<key>flags</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>label</key>
 			<string></string>
 			<key>lastUsed</key>
-			<date>2012-02-19T04:12:31Z</date>
+			<date>2012-02-19T16:58:55Z</date>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:05:57Z</date>
+			<date>2012-02-19T16:41:19Z</date>
 			<key>plainText</key>
-			<string>"%snippet:;seltxt%"</string>
+			<string>set pair_left to "\""
+set pair_right to "\""
+
+%snippet:,,selscript%</string>
 			<key>snippetType</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>useCount</key>
 			<integer>5</integer>
 			<key>uuidString</key>
-			<string>A2E5474A-F4B6-458F-A20B-E0FC324589ED</string>
+			<string>5CD10632-3C04-4C29-8728-CABDE2F18BBC</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
@@ -149,21 +154,24 @@ get s</string>
 			<key>creationDate</key>
 			<date>2012-02-19T02:58:11Z</date>
 			<key>flags</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>label</key>
 			<string></string>
 			<key>lastUsed</key>
 			<date>2012-02-19T04:43:45Z</date>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:13:39Z</date>
+			<date>2012-02-19T16:41:37Z</date>
 			<key>plainText</key>
-			<string>`%snippet:;seltxt%`</string>
+			<string>set pair_left to "`"
+set pair_right to "`"
+
+%snippet:,,selscript%</string>
 			<key>snippetType</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>useCount</key>
 			<integer>3</integer>
 			<key>uuidString</key>
-			<string>B555C0E5-CF14-47AD-A371-D95678C67AF7</string>
+			<string>8B8019F5-5F44-4EEF-BD4A-10CBE0429F89</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
@@ -173,21 +181,24 @@ get s</string>
 			<key>creationDate</key>
 			<date>2012-02-19T02:55:11Z</date>
 			<key>flags</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>label</key>
 			<string></string>
 			<key>lastUsed</key>
 			<date>2012-02-19T05:02:19Z</date>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:13:48Z</date>
+			<date>2012-02-19T16:41:40Z</date>
 			<key>plainText</key>
-			<string>(%snippet:;seltxt%)</string>
+			<string>set pair_left to "("
+set pair_right to ")"
+
+%snippet:,,selscript%</string>
 			<key>snippetType</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>useCount</key>
 			<integer>8</integer>
 			<key>uuidString</key>
-			<string>770F24EE-4DE0-41BD-ACB6-17B48A4062A1</string>
+			<string>A6706F7C-1660-4EFE-B9F6-77EB76347DA3</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
@@ -197,21 +208,24 @@ get s</string>
 			<key>creationDate</key>
 			<date>2012-02-19T02:54:46Z</date>
 			<key>flags</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>label</key>
 			<string></string>
 			<key>lastUsed</key>
-			<date>2012-02-19T04:43:29Z</date>
+			<date>2012-02-19T16:41:14Z</date>
 			<key>modificationDate</key>
-			<date>2012-02-19T04:18:14Z</date>
+			<date>2012-02-19T16:41:43Z</date>
 			<key>plainText</key>
-			<string>[%snippet:;seltxt%]</string>
+			<string>set pair_left to "["
+set pair_right to "]"
+
+%snippet:,,selscript%</string>
 			<key>snippetType</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>useCount</key>
 			<integer>16</integer>
 			<key>uuidString</key>
-			<string>3E3F4D8D-8D8F-4377-85EE-7DBF7DE99556</string>
+			<string>BC26D93C-6A02-40A1-81BE-D4B8186E002F</string>
 		</dict>
 	</array>
 </dict>
