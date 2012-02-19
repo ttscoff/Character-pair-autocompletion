@@ -1,0 +1,11 @@
+Type a single parenthesis character or a quote character, and it is auto completed with the closing character. Further, if you select some text before typing a parenthesis or quote character, then the selected text gets enclosed within the opening and closing characters.
+
+This is for applications that do not natively have in-built character pair autocompletion.
+
+2012 ckunte.
+
+Pre-requisite: TextExpander
+
+character-pair-autocomplete comes with ABSOLUTELY NO WARRANTY. This is free software under MIT license.
+
+<http://opensource.org/licenses/mit-license.php>
